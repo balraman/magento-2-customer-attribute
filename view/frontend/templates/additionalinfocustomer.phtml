@@ -1,0 +1,26 @@
+<?php
+
+/** @var \Mca140\CustomerAttribute\Block\AdditionalInfo $block */
+
+?>
+<?php
+
+	$my_country = '';
+   	if($block->getCustomer()->getCustomAttribute('my_country')) {
+    	$my_country = $block->getCustomer()->getCustomAttribute('my_country')->getValue();
+    }
+?>
+
+<fieldset class="fieldset create account">
+		<legend class="legend"><span><?php /* @escapeNotVerified */
+	            echo __('Additional Information') ?></span></legend>
+	<p>
+		<div class="field my_country">
+	    	<label for="my_country" class="label"><span><?php /* @escapeNotVerified */
+	            echo __('My Country') ?></span></label>
+	    	<div class="control">
+	        	<input type="text" class="input-my_country" name="my_country" value="<?= $my_country ?>" />
+	    	</div>
+		</div>
+	</p>
+</fieldset>
